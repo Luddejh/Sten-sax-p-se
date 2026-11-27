@@ -27,11 +27,21 @@ body {
  border-radius: 20px;
 }
 
+.reset:hover {
+ background-color:#eef0f600;   
+}
+
 .Scissors {
  height: 80px;   
 }
 
+.Scissors:hover, .Paper:hover, .Stone:hover {
+ background-color: rgba(0, 0, 0, 0.1);
+ border-radius: 10px;   
+}
+
 .winner-status {
+ border: 1px solid black;   
  display: flex;
  justify-content: center;   
 }
@@ -43,6 +53,7 @@ body {
 .winnerStatus {
  display: flex;
  gap: 10px;
+ border: 1px solid black;
  justify-content: center;
  margin-left: auto;
  margin-right: auto;

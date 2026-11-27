@@ -14,6 +14,7 @@ let User = document.querySelector(".User");
 let computer = document.querySelector(".Computer");
 let resetButton = document.querySelector(".reset");
 let draw = document.querySelector(".draw");
+let declareWinner = document.querySelector(".winner-status");
 
 let userScore = 0;
 let computerScore = 0;
@@ -58,8 +59,6 @@ function generateComputerChoice() {
 }
 
 function generateWinner(computer, user) {
-  //tie
-
   console.log("user choice: ", user);
   console.log("computer choice: ", computer);
 
@@ -96,7 +95,7 @@ function generateWinner(computer, user) {
     userScore++;
     console.log(userScore);
   }
-
+  declareWinner.innerHTML = "";
   winnerStatus.innerHTML = `
   <div class= you-container> 
    <p class="you">You</p>
@@ -107,16 +106,16 @@ function generateWinner(computer, user) {
   <p class="computer-score">${computerScore}</p
   </div>
   `;
-  console.log(`computer score: ${computerScore}`);
-  console.log(`user score: ${userScore}`);
+  drawRounds(userScore, computerScore);
+  winsOverTen(userScore, computerScore);
 }
 
 function resetScore() {
-  userScore = 0;
-  computerScore = 0;
-  drawRoundsCounter = 0;
-
-  winnerStatus.innerHTML = `
+  if (userScore > 0 && computerScore > 0 && drawRoundsCounter > 0) {
+    userScore = 0;
+    computerScore = 0;
+    drawRoundsCounter = 0;
+    winnerStatus.innerHTML = `
   <div class= you-container> 
    <p class="you">You</p>
    <p class="user-score">${userScore}</p>
@@ -126,9 +125,20 @@ function resetScore() {
   <p class="computer-score">${computerScore}</p
   </div>
   `;
-  drawRounds(drawRoundsCounter);
+    drawRounds(drawRoundsCounter);
+  }
 }
 
 function drawRounds(counter) {
   draw.innerHTML = `<p>Antalet oavgjorda: ${counter}</p>`;
+}
+
+function winsOverTen(computerScore, userScore) {
+  if (computerScore == 10) {
+    resetScore();
+    declareWinner.innerHTML = "Grattis! Du vann";
+  } else if (userScore == 10) {
+    resetScore();
+    declareWinner.innerHTML = "Datorn vann! du förlora";
+  }
 }
