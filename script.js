@@ -61,7 +61,7 @@ function generateWinner(computer, user) {
     (computer == "Rock" && user == "Rock") ||
     (computer == "Paper" && user == "Paper")
   ) {
-    console.log("it's a tie");
+    console.log("it's a ie");
     user = "";
     computer = "";
     //user losese
