@@ -8,6 +8,17 @@ body {
  background-image: url("/img/e945fd74-441e-4015-9f72-d8b2f985872a.png");   
 }
 
+.user-color-status {   
+ display: flex;
+ justify-content: center;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 10px;
+ border-radius: 10px;
+ width: 100px;
+ height: 100px;  
+}
+
 .Stone {
  height: 80px;   
 }
@@ -18,9 +29,12 @@ body {
 
 .reset {
  display: flex;
+ margin-left: auto;
+ margin-right: auto;
  justify-content: center;
  padding: 10px;
- border: 1px solid black;
+ border: 0px;
+ margin-top: 5px;
  background-color: #EEF0F6;   
  width: 100px;
  align-items: center;
@@ -28,8 +42,8 @@ body {
 }
 
 .reset:hover {
- background-color:#eef0f600;   
-}
+ background-color: rgba(0, 0, 0, 0.1);
+} 
 
 .Scissors {
  height: 80px;   
@@ -40,8 +54,11 @@ body {
  border-radius: 10px;   
 }
 
+.draw {
+ text-align: center;   
+}
+
 .winner-status {
- border: 1px solid black;   
  display: flex;
  justify-content: center;   
 }
@@ -116,3 +133,4 @@ body {
  justify-content: center;   
  margin: 40px;   
 }
+

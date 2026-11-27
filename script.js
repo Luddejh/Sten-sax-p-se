@@ -8,13 +8,13 @@ choose.appendChild(winnerStatus);
 let stone = document.querySelector(".Stone");
 let scissors = document.querySelector(".Scissors");
 let Pouch = document.querySelector(".Paper");
-let compHTML = document.querySelector(".comp");
-let userHTML = document.querySelector(".user");
-let User = document.querySelector(".User");
-let computer = document.querySelector(".Computer");
+let userColor = document.querySelector(".user-color-status");
 let resetButton = document.querySelector(".reset");
 let draw = document.querySelector(".draw");
 let declareWinner = document.querySelector(".winner-status");
+let winnerColor = document.querySelector(".winner-color");
+let userStatus = document.querySelector(".user");
+let compStatus = document.querySelector(".comp");
 
 let userScore = 0;
 let computerScore = 0;
@@ -46,8 +46,6 @@ let computerChoice = "";
 
 function userChoice(userChoice) {
   userValue = userChoice;
-  console.log(userValue);
-  console.log(userValue);
 }
 
 function generateComputerChoice() {
@@ -59,18 +57,18 @@ function generateComputerChoice() {
 }
 
 function generateWinner(computer, user) {
-  console.log("user choice: ", user);
-  console.log("computer choice: ", computer);
-
+  body.appendChild(userColor);
+  declareWinner.innerHTML = "";
   if (
     (computer == "Scissors" && user == "Scissors") ||
     (computer == "Rock" && user == "Rock") ||
     (computer == "Paper" && user == "Paper")
   ) {
-    console.log("it's a ie");
+    userColor.innerHTML = "It's a tie!";
     user = "";
     computer = "";
     drawRoundsCounter++;
+    userColor.style.backgroundColor = "#8585C7";
     drawRounds(drawRoundsCounter);
 
     //user losese
@@ -79,9 +77,10 @@ function generateWinner(computer, user) {
     (computer == "Scissors" && user == "Paper") ||
     (computer == "Paper" && user == "Stone")
   ) {
+    userColor.innerHTML = "You lost this round!";
+    userColor.style.backgroundColor = "red";
     user = "";
     computer = "";
-    console.log("computer wins!");
     computerScore++;
   } else if (
     //user winns
@@ -89,20 +88,19 @@ function generateWinner(computer, user) {
     (user == "Scissors" && computer == "Paper") ||
     (user == "Paper" && computer == "Rock")
   ) {
-    console.log("computer loses");
+    userColor.innerHTML = "You won this round!";
+    userColor.style.backgroundColor = "green";
     user = "";
     computer = "";
     userScore++;
-    console.log(userScore);
   }
-  declareWinner.innerHTML = "";
   winnerStatus.innerHTML = `
   <div class= you-container> 
    <p class="you">You</p>
    <p class="user-score">${userScore}</p>
   </div>
   <div class= comp-container>
-  <p class="comp">Comp</p>
+  <p class="comp">Computer</p>
   <p class="computer-score">${computerScore}</p
   </div>
   `;
@@ -111,10 +109,12 @@ function generateWinner(computer, user) {
 }
 
 function resetScore() {
-  if (userScore > 0 && computerScore > 0 && drawRoundsCounter > 0) {
+  if (userScore > 0 || computerScore > 0 || drawRoundsCounter > 0) {
+    console.log("test");
     userScore = 0;
     computerScore = 0;
     drawRoundsCounter = 0;
+    userColor.remove();
     winnerStatus.innerHTML = `
   <div class= you-container> 
    <p class="you">You</p>
@@ -130,7 +130,8 @@ function resetScore() {
 }
 
 function drawRounds(counter) {
-  draw.innerHTML = `<p>Antalet oavgjorda: ${counter}</p>`;
+  draw.innerHTML = `<p style:"margin-left: auto;
+  ">Antalet oavgjorda: ${counter}</p>`;
 }
 
 function winsOverTen(computerScore, userScore) {
