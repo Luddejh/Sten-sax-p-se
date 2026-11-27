@@ -1,0 +1,96 @@
+* { 
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal
+}
+
+body {
+ background-image: url("/img/e945fd74-441e-4015-9f72-d8b2f985872a.png");   
+}
+
+.Stone {
+ height: 80px;   
+}
+
+.Paper {
+ height: 80px;   
+}
+
+.Scissors {
+ height: 80px;   
+}
+
+.winner-status {
+ display: flex;
+ justify-content: center;   
+}
+
+.move {
+ text-align: center;   
+}
+
+.winnerStatus {
+ display: flex;
+ gap: 10px;
+ justify-content: center;
+ margin-left: auto;
+ margin-right: auto;
+ border-radius: 20px;
+ background-color: #EEF0F6;
+ width: 350px;
+ border: 1px solid #E8E9F2;
+ flex-direction: row;  
+ height: 70px; 
+}
+
+.comp {
+ font-size: 15px;
+ gap: 5px;
+ margin: 0px;
+ height: 0px;
+ padding: 0px;   
+}
+
+.you {
+ font-size: 15px;
+ gap: 5px;
+ margin: 0px;
+ height: 0px;
+ padding: 0px;     
+}
+
+.Choose {
+ color: #85899D;   
+}
+
+.title {
+ font-size: 70px;   
+ text-align: center;   
+}
+
+.choose {
+ text-align: center;
+}
+
+.icon-container {
+ display: flex;
+ align-items: center;
+ justify-content: center;   
+}
+
+.you-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;   
+ margin: 40px; 
+ border-left: 1px solid black ;  
+}
+
+.comp-container {
+  display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;   
+ margin: 40px;   
+}
