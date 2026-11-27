@@ -4,8 +4,12 @@
   font-style: normal
 }
 
+html, body {
+    min-height: 100%;
+}
+
 body {
- background-image: url("./img/e945fd74-441e-4015-9f72-d8b2f985872a.png");   
+ background: linear-gradient(135deg, #F3EFFB, #E6DDF7);
 }
 
 .user-color-status {   
