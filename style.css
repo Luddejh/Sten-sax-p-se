@@ -16,6 +16,17 @@ body {
  height: 80px;   
 }
 
+.reset {
+ display: flex;
+ justify-content: center;
+ padding: 10px;
+ border: 1px solid black;
+ background-color: #EEF0F6;   
+ width: 100px;
+ align-items: center;
+ border-radius: 20px;
+}
+
 .Scissors {
  height: 80px;   
 }

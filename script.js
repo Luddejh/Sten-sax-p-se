@@ -12,9 +12,12 @@ let compHTML = document.querySelector(".comp");
 let userHTML = document.querySelector(".user");
 let User = document.querySelector(".User");
 let computer = document.querySelector(".Computer");
+let resetButton = document.querySelector(".reset");
+let draw = document.querySelector(".draw");
 
 let userScore = 0;
 let computerScore = 0;
+let drawRoundsCounter = 0;
 
 let result = stone.addEventListener("click", () => {
   userChoice(stone.className);
@@ -29,6 +32,10 @@ scissors.addEventListener("click", () => {
 Pouch.addEventListener("click", () => {
   userChoice(Pouch.className);
   generateComputerChoice();
+});
+
+resetButton.addEventListener("click", () => {
+  resetScore();
 });
 
 let computerChoices = ["Rock", "Scissors", "Paper"];
@@ -64,6 +71,9 @@ function generateWinner(computer, user) {
     console.log("it's a ie");
     user = "";
     computer = "";
+    drawRoundsCounter++;
+    drawRounds(drawRoundsCounter);
+
     //user losese
   } else if (
     (computer == "Rock" && user == "Scissors") ||
@@ -99,4 +109,26 @@ function generateWinner(computer, user) {
   `;
   console.log(`computer score: ${computerScore}`);
   console.log(`user score: ${userScore}`);
+}
+
+function resetScore() {
+  userScore = 0;
+  computerScore = 0;
+  drawRoundsCounter = 0;
+
+  winnerStatus.innerHTML = `
+  <div class= you-container> 
+   <p class="you">You</p>
+   <p class="user-score">${userScore}</p>
+  </div>
+  <div class= comp-container>
+  <p class="comp">Comp</p>
+  <p class="computer-score">${computerScore}</p
+  </div>
+  `;
+  drawRounds(drawRoundsCounter);
+}
+
+function drawRounds(counter) {
+  draw.innerHTML = `<p>Antalet oavgjorda: ${counter}</p>`;
 }
