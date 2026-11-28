@@ -141,6 +141,6 @@ function winsOverTen(computerScore, userScore) {
     declareWinner.innerHTML = "Grattis! Du vann";
   } else if (userScore == 10) {
     resetScore();
-    declareWinner.innerHTML = "Datorn vann! du förlora";
+    declareWinner.innerHTML = "Datorn vann!";
   }
 }
