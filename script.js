@@ -15,6 +15,7 @@ let declareWinner = document.querySelector(".winner-status");
 let winnerColor = document.querySelector(".winner-color");
 let userStatus = document.querySelector(".user");
 let compStatus = document.querySelector(".comp");
+let colorstatContainer = document.querySelector(".color-stat");
 
 let userScore = 0;
 let computerScore = 0;
@@ -57,7 +58,7 @@ function generateComputerChoice() {
 }
 
 function generateWinner(computer, user) {
-  body.appendChild(userColor);
+  colorstatContainer.appendChild(userColor);
   declareWinner.innerHTML = "";
   if (
     (computer == "Scissors" && user == "Scissors") ||

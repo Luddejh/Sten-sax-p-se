@@ -107,7 +107,7 @@ body {
 }
 
 .title {
- font-size: 70px;   
+ font-size: 50px;   
  text-align: center;   
 }
 
@@ -138,3 +138,14 @@ body {
  margin: 40px;   
 }
 
+.copyright {
+ text-align: end; 
+}
+
+.footer-container {
+ display: flex; 
+}
+
+.color-stat {
+  
+}
