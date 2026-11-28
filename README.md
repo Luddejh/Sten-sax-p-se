@@ -86,7 +86,7 @@ Den som först når 10 poäng vinner spelet.
 
 🌐 Spela spelet
 
-Klicka här för att spela Sten, sax, påse!
+https://luddejh.github.io/Sten-sax-p-se/
 
 👤 Skapare
 
