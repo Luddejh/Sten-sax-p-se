@@ -17,6 +17,7 @@ let userStatus = document.querySelector(".user");
 let compStatus = document.querySelector(".comp");
 let colorstatContainer = document.querySelector(".color-stat");
 
+//scores
 let userScore = 0;
 let computerScore = 0;
 let drawRoundsCounter = 0;
@@ -109,9 +110,18 @@ function generateWinner(computer, user) {
   winsOverTen(userScore, computerScore);
 }
 
+function winsOverTen(computerScore, userScore) {
+  if (computerScore == 10) {
+    resetScore();
+    declareWinner.innerHTML = "Grattis! Du vann";
+  } else if (userScore == 10) {
+    resetScore();
+    declareWinner.innerHTML = "Datorn vann!";
+  }
+}
+
 function resetScore() {
   if (userScore > 0 || computerScore > 0 || drawRoundsCounter > 0) {
-    console.log("test");
     userScore = 0;
     computerScore = 0;
     drawRoundsCounter = 0;
@@ -133,14 +143,4 @@ function resetScore() {
 function drawRounds(counter) {
   draw.innerHTML = `<p style:"margin-left: auto;
   ">Antalet oavgjorda: ${counter}</p>`;
-}
-
-function winsOverTen(computerScore, userScore) {
-  if (computerScore == 10) {
-    resetScore();
-    declareWinner.innerHTML = "Grattis! Du vann";
-  } else if (userScore == 10) {
-    resetScore();
-    declareWinner.innerHTML = "Datorn vann!";
-  }
 }
